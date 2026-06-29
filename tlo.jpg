@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kocham Cię ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:url("tlo.jpg") center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+}
+
+h1{
+color:white;
+font-size:50px;
+text-shadow:3px 3px 10px black;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+50%{transform:scale(1.1);}
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:30px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+.rose{
+position:absolute;
+font-size:35px;
+animation:fall linear infinite;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Kocham Cię Skarbie ❤️</h1>
+
+<script>
+for(let i=0;i<40;i++){
+let h=document.createElement("div");
+h.className=Math.random()>0.5?"heart":"rose";
+h.innerHTML=Math.random()>0.5?"❤️":"🌹";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(5+Math.random()*5)+"s";
+h.style.fontSize=(20+Math.random()*25)+"px";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
